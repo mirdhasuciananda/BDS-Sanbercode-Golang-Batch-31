@@ -34,6 +34,7 @@ func buahFavorit (nama string, buahBuahan ...string) string {
 }
 
 func main() {
+
 	// Soal 1
 	panjang := 12
 	lebar := 4
@@ -66,23 +67,34 @@ func main() {
 	fmt.Println()
 
 	// Soal 4
-	// var dataFilm = []map[string]string{}
+	var dataFilm = []map[string]string{} // Slice dengan tipe data map
 	
-	// // buatlah closure function disini
-	// var tambahDataFilm = func (nama string, durasi string, genre string, tahun string) {		
-	// 	dataFilm["nama"] = nama
-	// 	dataFilm["durasi"] = durasi
-	// 	dataFilm["genre"] = genre
-	// 	dataFilm["tahun"] = tahun
+	// Yang ini map dengan value slice
+	// var dataFilm = map[string][]string{
+	// 	"nama": []string{"LOTR", "avenger", "spiderman", "juon"},
+	// 	"durasi": []string{"2 jam", "2 jam", "2 jam", "2 jam"},
+	// 	"genre": []string{"action", "action", "action", "horror"},
+	// 	"tahun": []string{"1999", "2019", "2004", "2004"},
 	// }
+	
+	// Buatlah closure function disini
+	var tambahDataFilm = func (nama string, durasi string, genre string, tahun string) {
+		var film =  map[string]string {
+			"nama": nama,
+			"durasi": durasi,
+			"genre": genre,
+			"tahun": tahun,
+		}		
+		dataFilm = append(dataFilm, film)
+	}
 
-	// tambahDataFilm("LOTR", "2 jam", "action", "1999")
-	// tambahDataFilm("avenger", "2 jam", "action", "2019")
-	// tambahDataFilm("spiderman", "2 jam", "action", "2004")
-	// tambahDataFilm("juon", "2 jam", "horror", "2004")
+	tambahDataFilm("LOTR", "2 jam", "action", "1999")
+	tambahDataFilm("avenger", "2 jam", "action", "2019")
+	tambahDataFilm("spiderman", "2 jam", "action", "2004")
+	tambahDataFilm("juon", "2 jam", "horror", "2004")
 
-	// for _, item := range dataFilm {
-	// 	fmt.Println(item)
-	// }
+	for _, item := range dataFilm {
+		fmt.Println(item)
+	}
 
 }
