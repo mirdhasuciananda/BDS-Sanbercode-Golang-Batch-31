@@ -17,7 +17,14 @@ func volumeBalok (panjang int, lebar int, tinggi int) int {
 }
 
 func introduce (nama string, gender string, pekerjaan string, umur string) (kalimatPerkenalan string){
-	kalimatPerkenalan = nama + gender + pekerjaan + umur
+	if gender == "laki-laki" {
+		kalimatPerkenalan = "Pak "
+	} else if gender == "perempuan" {
+		kalimatPerkenalan = "Bu "
+	}
+	
+	kalimatPerkenalan = kalimatPerkenalan + nama + " adalah seorang " + pekerjaan + " yang berusia " + umur + " tahun"
+
 	return 
 }
 
