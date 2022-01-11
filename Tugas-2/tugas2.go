@@ -34,10 +34,10 @@ func main() {
 	var angkaKedua = "5"
 	var angkaKetiga = "6"
 	var angkaKeempat = "7"
-	angkaPertamaInt, _ := strconv.ParseInt(angkaPertama, 2, 8)
-	angkaKeduaInt, _ := strconv.ParseInt(angkaKedua, 2, 8)
-	angkaKetigaInt, _ := strconv.ParseInt(angkaKetiga, 2, 8)
-	angkaKeempatInt, _ := strconv.ParseInt(angkaKeempat, 2, 8)
+	angkaPertamaInt, _ := strconv.ParseInt(angkaPertama, 10, 8)
+	angkaKeduaInt, _ := strconv.ParseInt(angkaKedua, 10, 8)
+	angkaKetigaInt, _ := strconv.ParseInt(angkaKetiga, 10, 8)
+	angkaKeempatInt, _ := strconv.ParseInt(angkaKeempat, 10, 8)
 	angkaJumlah := angkaPertamaInt + angkaKeduaInt + angkaKetigaInt + angkaKeempatInt
 	fmt.Println(angkaJumlah)
 
@@ -47,4 +47,10 @@ func main() {
 	kalimat = strings.Replace(kalimat, "halo", "Hi", -1)
 	angkaString := strconv.FormatInt(int64(angka), 10)
 	fmt.Println("\"" + kalimat + "\"" + " - " + angkaString)
+
+}
+
+func change(original *int, value int) {
+	*original = value
+
 }
